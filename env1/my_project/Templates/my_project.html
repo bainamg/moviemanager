@@ -1,0 +1,22 @@
+
+<h1>My project</h1>
+<h1>Title:{{movies[0]['title']}}</h1>
+<h2>Year:{{year}}</h2>
+<p>Summary:{{summary}}</p>
+{% if success%}
+<a>Movie was sucess at that time</a>
+{% else %}
+<a>Movie was not success at that time</a>
+{% endif %}
+
+<h1>Movie List:</h1>
+{% for movie_object in movies%}
+<h2>Title:{{movie_object.title|upper}}</h1>
+<h2>Year:{{movie_object.year}}</h2>
+<p>Summary:{{movie_object.summary|default:'no data availabe'}}</p>
+{% if movie_object.success %}
+<a>Movie was sucess at that time</a>
+{% else %}
+<a>Movie was not success at that time</a>
+{% endif %}
+{% endfor %}

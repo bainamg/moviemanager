@@ -1,0 +1,9 @@
+{% extends 'blank_layout.html' %}
+{% block content %}
+<h1>Movie List:</h1>
+{% for movie_object in movies%}
+<h2>Title:{{movie_object.title|upper}}</h1>
+<h2>Year:{{movie_object.year}}</h2>
+<p>Summary:{{movie_object.summary|default:'no data availabe'}}</p>
+{% endfor %}
+{% endblock content %}
